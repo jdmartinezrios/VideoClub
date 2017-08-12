@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<h1 class="title">This the usuarios update form</h1>
+<form name="userForm" class="Form" ng-submit="userForm.$valid && vm.updateUsuario()" novalidate>
+  <label for="" class="Label-Description">Tipo Documento</label>
+  <select class="Document-Type" name="TipoDocumento" ng-model="vm.usuarios.tipoDocumento.id" required>
+    <option class="" ng-value="1">C.C.</option>
+    <option class="" ng-value="2">T.I.</option>
+  </select>
+  <label for="" class="Label-Description">Documento</label>
+  <input type="text" ng-model="vm.usuarios.numDocumento">
+  <label for="" class="Label-Description">Apellidos</label>
+  <input type="text" ng-model="vm.usuarios.apellidos">
+  <label for="" class="Label-Description">Nombres</label>
+  <input type="text" ng-model="vm.usuarios.nombres">
+  <label for="" class="Label-Description">Email</label>
+  <input type="text" ng-model="vm.usuarios.email">
+  <label for="" class="Label-Description">Password</label>
+  <input type="password" ng-model="vm.usuarios.password">
+  <label for="" class="Label-Description">Sexo</label>
+  <select class="Sexo" name="Genery" ng-model="vm.usuarios.sexo" required>
+    <option class="" ng-value="F">F</option>
+    <option class="" ng-value="M">M</option>
+  </select>
+  <label for="" class="Label-Description">Departamento</label>
+  <select name="departamento" class="Sexo" ng-model="vm.idDepartamento" ng-change="vm.getCiudades()">
+    <option class="" ng-value="{{item.id}}" ng-repeat="item in vm.departamentos">{{item.nombre}}</option>
+  </select>
+  <label for="" class="Label-Description">Ciudad</label>
+  <select name="ciudades" class="Sexo" ng-model="vm.usuarios.ciudad.id">
+    <option ng-value="{{item.id}}" ng-repeat="item in vm.ciudades">{{item.nombre}}</option>
+  </select>
+  <button type="submit" class="Button-Submit" ng-disabled="userForm.$invalid">Actualizar</button>
+</form>

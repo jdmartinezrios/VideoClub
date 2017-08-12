@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<div class="navbar navbar-default navbar-static-top navbar-inverse" ng-controller="NavbarController">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" ng-click="nav.isCollapsed = !nav.isCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">iEmergencias</a>
+    </div>
+    <div uib-collapse="nav.isCollapsed" class="navbar-collapse collapse " id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li ng-repeat="item in nav.menu" ui-sref-active="active">
+            <a ui-sref="{{item.state}}">{{item.title}}</a>
+        </li>
+        <li ng-repeat="item in nav.menu" ui-sref-active="active">
+            <a ui-sref="login">{{item.Login}}</a>
+        </li>
+        <li ng-repeat="item in nav.menu" ui-sref-active="active">
+            <a ui-sref="usuarios-create">{{item.users}}</a>
+        </li>
+        <li ng-repeat="item in nav.menu" ui-sref-active="active">
+            <a ui-sref="usuarios-list">{{item.userList}}</a>
+        </li>
+        <li ng-repeat="item in nav.menu" ui-sref-active="active">
+          <a ui-sref="pais-list" style="cursor:pointer">{{item.country}}</a>
+        </li>
+        <li ng-repeat="item in nav.menu" ui-sref-active="active">
+          <a ui-sref="ciudades-list" style="cursor:pointer">{{item.cities}}</a>
+        </li>
+        <li ng-repeat="item in nav.menu" ui-sref-active="active">
+          <a ui-sref="departments-list" style="cursor:pointer">{{item.departments}}</a>
+        </li>
+        <li ng-repeat="item in nav.menu" ui-sref-active="active">
+          <a ui-sref="tiposDocumentos-list" style="cursor:pointer">{{item.numDocument}}</a>
+        </li>
+      </ul>
+      <form action="" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Buscar">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
